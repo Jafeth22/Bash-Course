@@ -1,3 +1,5 @@
+--------------------------------------------------------------------------------
+----------------------------------How to build a Bash script
 Nano = to create a script
 	Nano = Create a new script
 	Nano scriptName = create an existing script
@@ -34,4 +36,11 @@ Inside .profile or .bash_profile we can add the following line to make it global
 	*Export PATH="$PATH:$HOME/PathOfScript": to edit it we use 'nano' command
 
 Source pathFile = To reload the file without restart the terminal
+
+--------------------------------------------------------------------------------
+----------------------------------Variables and Shell Expansions
+3 types of shell parameters
+	Variables: Values i can change manually, the variable in shell MUST not have spaces in the middle
+	Positional parameters: 
+	Special parameters: 
 
