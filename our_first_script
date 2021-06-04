@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#This is a comment line
+#Author: Jafeth
+#Date Created: 04/Jun/2021
+#Last modified: 04/Jun/2021
+
+#Description
+#Prints "This is my first script"
+
+#Usage = Simply tells the user how to actually use the script and should type
+#our_first_script
+
+echo "This is my first script"
+exit 0
+
