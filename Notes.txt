@@ -21,3 +21,5 @@ chmod [permission] [file_name] = Define permission to the file
 	
 Ls -l = See the permissions, if it starts with - it is a file, but d it is a folder 
 
+.tar = .zip
+

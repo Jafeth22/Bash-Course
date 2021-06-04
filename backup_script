@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#Author: Jafeth
+
+#Date created: 04/Jun/2021
+
+#Description
+#Creates a backup in ~/Documents folder of all files in the home directory
+
+tar -cvf ~/Documents/my_backup_"$(date +%d-%m-%Y_%H-%M-%S)".zip ~/* 2>/dev/null
+
+echo "Finish successfully"
+exit 0
