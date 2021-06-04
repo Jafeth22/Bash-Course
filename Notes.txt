@@ -23,3 +23,15 @@ Ls -l = See the permissions, if it starts with - it is a file, but d it is a fol
 
 .tar = .zip
 
+-it = Correr el bash pero espere a que yo le de entrada, porque es interactivo
+
+Mv scriptName folderToMove = to move 1 file a folder
+
+Ls -a = to show hidden files
+
+PATH variable = Tell the shell where to search for executable files
+Inside .profile or .bash_profile we can add the following line to make it global
+	*Export PATH="$PATH:$HOME/PathOfScript": to edit it we use 'nano' command
+
+Source pathFile = To reload the file without restart the terminal
+
