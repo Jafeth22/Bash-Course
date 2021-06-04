@@ -1,0 +1,23 @@
+Nano = to create a script
+	Nano = Create a new script
+	Nano scriptName = create an existing script
+Cntrl + O = Save and then enter
+Cntrl + X = Exit from nano
+
+#!/bin/bash = what kind of script we are writing
+
+0 = successful; 1-255 = unsuccessful = This tell the shel if the commands run correctly
+
+chmod [permission] [file_name] = Define permission to the file
+	*Example: chmod u=rwx,g=rwx,o=rwx [file_name]
+		-Define accessibility for the user/owner (u), group (g), and others (o).
+		-Followed by the equal sign (=) and the first letter of the read (r), write (w) and/or execute (x) privileges.
+	*Example 2: chmod 644 test.txt = 6: for the user, 4: group, the other 4: others
+		-7 = for read, write, and execute permission
+		-6 = for read and write privileges
+		-5 = for read and execute privileges
+		-4 = for read privileges
+		-0 = for no privileges
+	
+Ls -l = See the permissions, if it starts with - it is a file, but d it is a folder 
+
