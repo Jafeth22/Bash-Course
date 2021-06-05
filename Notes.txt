@@ -52,3 +52,10 @@ USER variable = Username of the current user
 HOSTNAME = Name of the computer
 HOSTTYPE = Architecture of the computer
 PS1 = Contains the prompt string shown 
+
+variableName = someValue
+echo ${#variableName} = This will print the lenght of the variable
+echo ${variableName,,} = All minus, only 1 "," just modify the first
+echo ${variableName^^} = All mayus, only 1 "^" just modify the first
+echo ${variableName:start:long(optional)} = To split the string value, without the end, it will cut from the start to the end
+
