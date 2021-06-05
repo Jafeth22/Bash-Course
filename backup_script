@@ -7,7 +7,14 @@
 #Description
 #Creates a backup in ~/Documents folder of all files in the home directory
 
-tar -cvf ~/Documents/my_backup_"$(date +%d-%m-%Y_%H-%M-%S)".zip ~/* 2>/dev/null
+echo "Hi ${USER}"
+echo "I will now backup your home directory, $HOME"
+currentdir=$(pwd)
+echo "You are running this script from $currentdir"
+echo "Therefore, I will save the backup in $currentdir"
 
-echo "Finish successfully"
+#tar -cvf ~/Documents/my_backup_"$(date +%d-%m-%Y_%H-%M-%S)".zip ~/* 2>/dev/null
+tar -cf $currentdir/my_backup_"$(date +%d-%m-%Y_%H-%M-%S)".tar $HOME/* 2>/dev/null
+
+echo "Backup completed successfully"
 exit 0
