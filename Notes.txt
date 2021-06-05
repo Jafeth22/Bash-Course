@@ -31,7 +31,8 @@ Mv scriptName folderToMove = to move 1 file a folder
 
 Ls -a = to show hidden files
 
-PATH variable = Tell the shell where to search for executable files
+PATH variable = Tell the shell where to search for executable files, it constain the list of folders that the shell will search for executeble files to run as command names
+	*echo $PATH
 Inside .profile or .bash_profile we can add the following line to make it global
 	*Export PATH="$PATH:$HOME/PathOfScript": to edit it we use 'nano' command
 
@@ -44,3 +45,10 @@ Source pathFile = To reload the file without restart the terminal
 	Positional parameters: 
 	Special parameters: 
 
+HOME variable = It's used to store the absolute path to the current user's home
+	*echo $HOME
+USER variable = Username of the current user
+	*echo $USER
+HOSTNAME = Name of the computer
+HOSTTYPE = Architecture of the computer
+PS1 = Contains the prompt string shown 
