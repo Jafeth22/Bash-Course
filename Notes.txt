@@ -51,7 +51,9 @@ USER variable = Username of the current user
 	*echo $USER
 HOSTNAME = Name of the computer
 HOSTTYPE = Architecture of the computer
-PS1 = Contains the prompt string shown 
+PS1 = Contains the prompt string shown
+PWD or ~+ = Current directory
+OLDPWD or ~- = Out previos directory
 
 variableName = someValue
 echo ${#variableName} = This will print the lenght of the variable
@@ -59,3 +61,17 @@ echo ${variableName,,} = All minus, only 1 "," just modify the first
 echo ${variableName^^} = All mayus, only 1 "^" just modify the first
 echo ${variableName:start:long(optional)} = To split the string value, without the end, it will cut from the start to the end
 
+TILDE EXPANSION = ~
+It refers to HOME directory without having to type it
+
+BRACE EXPANSION
+Examples
+	-echo {1,2,a,b,hola,mundo}
+	-echo {1,2,3,4,5,6,7,8,9,10} or echo {1..10}, it is to print a range instead using commas to separate each value
+	-echo {1..100..3} if we want to do the list with a specific steps, we must type it after the range values
+	-echo month{1..12} this will prefix month for each number like month1, month2...
+		or, we can do something like this to have the same amount of digits
+		-echo month(01...12), this will show month01, month02...month12
+	-mkdir month{01..12}, this will let us create new folders of months
+		-touch month{01..12}/day{01..31}.txt, this will create empty text file (this case will be 31 files) inside each folder alrady created
+	
