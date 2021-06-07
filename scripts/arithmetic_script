@@ -1,0 +1,17 @@
+#!/bin/bash
+x=4
+y=2
+echo $((x+y)) #sum
+echo $((x-y)) #subtraction
+echo $((x*y)) #multiplication
+echo $((x/y)) #division
+echo $((x**y)) #exponential
+echo $((x%y)) #module
+
+#------------------------------------------------
+#To use with decimal operations
+
+#scale: it is the amount of decimal it is going to show
+#for this example I want 2 decimals
+echo "scale=2; 5/2" | bc
+
