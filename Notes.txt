@@ -35,7 +35,7 @@ rm fileName = To remove/delete the files
 
 touch fileName = This will create an empty file
 
-cat + something = Wait for input from the user's keyboard
+cat fileName = Show what contains the file
 
 $0 = This will print the name of the current shell  
 
@@ -130,3 +130,9 @@ SPECIAL PARAMETERS: The value of a special parameter is calculated for us based 
 		-"$@": In case we want to send params with spaces like this: "Monthly Report", if we use this with the another way, it will be separete in 2, it stops the words splitting from happening on the positional parameters
 	-$*: Allow us to access to all positional parameters at once, provides alll positional parameters as one word, but separeted by the first character of the IFS variable. The final word is not subject to further word splitting
 	NOTE: $* is exactly the same as $@, as it expands each of the positional parameters to individual words that are subject to word splitting. However, "$*" join each postional parameter into one word, but places the first character of the IFS, variable between them. Unlike $*, the result of "$*" is not subject to word splitting
+
+READ COMMANDS: Let the console read some input value from the user
+	-read -p: It will let us to show a message/note to the user before the input value
+	-read -t amountSeconds: Will move to the next line after that time
+	-read -s: Will hide the values, like a password field
+	NOTE: I can use the 3 options at the same time, e.g. read -s -t 5 -p rest of the line
