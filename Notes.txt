@@ -116,3 +116,7 @@ Steps before execute a command line
 		-echo "This is some output test" > TestOutput.txt, or, cd commandLine 2> error.txt = this will record the error inside the file
 		-> stand output, 2> standart error and &> standart error and output at same time, >> redirection operator redirects standard output of a command to a file.
 
+
+--------------------------------------------------------------------------------
+----------------------------------Requesting User Input
+POSITIONAL PARAMETERS: They are parameters set by the shell to store the value of each of these command line arguemets, I can't save the data manually, also, I can refer to values help by positional parameters using parameter expansions, and for numbers bigger than 10, they should be used like this ${10}
