@@ -37,6 +37,8 @@ touch fileName = This will create an empty file
 
 cat + something = Wait for input from the user's keyboard
 
+$0 = This will print the name of the current shell  
+
 PATH variable = Tell the shell where to search for executable files, it constain the list of folders that the shell will search for executeble files to run as command names
 	*echo $PATH
 Inside .profile or .bash_profile we can add the following line to make it global
@@ -120,3 +122,11 @@ Steps before execute a command line
 --------------------------------------------------------------------------------
 ----------------------------------Requesting User Input
 POSITIONAL PARAMETERS: They are parameters set by the shell to store the value of each of these command line arguemets, I can't save the data manually, also, I can refer to values help by positional parameters using parameter expansions, and for numbers bigger than 10, they should be used like this ${10}
+
+SPECIAL PARAMETERS: The value of a special parameter is calculated for us based on our current script, and they are unmodifiable
+	-$#: Expands the positional parameter or stores the number of command line arguments that have been provided to the script
+	-$0: Expands the name of the current for this case, but in a script, expands the name of the script
+	-$@: Allow us to access to all positional parameters at once, expands to all the positional parameters provided to the script, but provides them as 'unquoted separate words', that are subject to word splitting
+		-"$@": In case we want to send params with spaces like this: "Monthly Report", if we use this with the another way, it will be separete in 2, it stops the words splitting from happening on the positional parameters
+	-$*: Allow us to access to all positional parameters at once, provides alll positional parameters as one word, but separeted by the first character of the IFS variable. The final word is not subject to further word splitting
+	NOTE: $* is exactly the same as $@, as it expands each of the positional parameters to individual words that are subject to word splitting. However, "$*" join each postional parameter into one word, but places the first character of the IFS, variable between them. Unlike $*, the result of "$*" is not subject to word splitting
