@@ -31,6 +31,12 @@ Mv scriptName folderToMove = to move 1 file a folder
 
 Ls -a = to show hidden files
 
+rm fileName = To remove/delete the files
+
+touch fileName = This will create an empty file
+
+cat + something = Wait for input from the user's keyboard
+
 PATH variable = Tell the shell where to search for executable files, it constain the list of folders that the shell will search for executeble files to run as command names
 	*echo $PATH
 Inside .profile or .bash_profile we can add the following line to make it global
@@ -74,4 +80,39 @@ Examples
 		-echo month(01...12), this will show month01, month02...month12
 	-mkdir month{01..12}, this will let us create new folders of months
 		-touch month{01..12}/day{01..31}.txt, this will create empty text file (this case will be 31 files) inside each folder alrady created
-	
+	-rm {1..5}, this is to remove files named from 1 to 5
+
+--------------------------------------------------------------------------------
+----------------------------------How bash processes command lines
+Steps before execute a command line
+	1-TOKENISATION:  A sequence of characters that is considered as a single unit by the shell, the shell determines where a token starts and where it ends by looking this characters: |, &, ;, () <>, space, tab and newline, these are named Metacharacters
+		-Words: NEVER contain unquoted metacharacts
+		-Operators: ALWAYS contain unquoted metacharacts
+
+	2-COMMAND IDENTIFICATION: The shell breaks the command line up into either simple or compound commands
+	 	-Simple command: it is the command name (this first word) and others are the arguemets for that command
+		-Compound commands: Provide Basche with its programming construts, such if statements or some loops
+
+	3-EXPASIONS: Such as word splitting and globin, some of the expansions are Brace, Parameters, Arithmetic, Command, Tilde, Word Splitting and Globbing. The expansions that are in the same stage are all given the same priority, and are simply performed in the order they are found on the command line when it is read from left to right
+		The order of the expansions are:
+			1-Brace
+			2-Parameter, Arithmetic, Command Substitution and Tilde
+			3-Word splitting: This work only with Parameter, Command and Arithmetic
+				IFS: To split the unquoted values, the default values are space, tab and newline, but IT can be changed
+				NOTE: If I want the output of Parameter, Arithmetic and a Command Substitution, to be considered as a single word: WRAP THAT EXPANSION IN DOUBLE QUOTES
+			4-Globbing: Only words containing unquoted special pattern characters are interpreted as patterns
+				-*: files.* = all named file or *.txt = all text files or files*.txt = that has some value after "file" and it is a text file
+				-?: file?.txt = all the files that have some value (1 value) after file and the dot or file???.pdf = all values that have some 3 values and they are pdf
+				-[]: Only marck the lenght and characters that you put inside it
+					-ls file[abc].txt = Will match all the text files that have some of the 3
+					-ls file[abc][abc][abc].txt = Each of the []'s are trying to match 1 of the value given
+					-ls file[a-g].txt = Will search inside the range given
+
+	4-QUOTE REMOVAL: How the command is interpreted, so this step will simply remove all those supportuve quotes, the shell removes all the unquoted backslashes, single quote abd double quote
+
+	5-REDIRECTION
+		Standards: 0 = Input, 1 = Output, 2 = Error, this numbers
+		-cat < hello.txt = Will show what is inside the file
+		-echo "This is some output test" > TestOutput.txt, or, cd commandLine 2> error.txt = this will record the error inside the file
+		-> stand output, 2> standart error and &> standart error and output at same time, >> redirection operator redirects standard output of a command to a file.
+
