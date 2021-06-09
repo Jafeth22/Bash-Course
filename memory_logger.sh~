@@ -1,0 +1,12 @@
+#!/bin/bash
+
+perfFolder = $HOME/performance
+
+if [ -d perfFolder ]; then
+	echo "The folder Performance exists"
+else
+	mkdir $HOME/performance
+fi
+
+touch $HOME/performance/memory.log
+free > $HOME/performance/memory.log
