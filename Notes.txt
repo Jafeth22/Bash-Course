@@ -61,7 +61,7 @@ HOSTNAME = Name of the computer
 HOSTTYPE = Architecture of the computer
 PS1 = Contains the prompt string shown
 PWD or ~+ = Current directory
-OLDPWD or ~- = Out previos directory
+OLDPWD or ~- = Out previous directory
 
 variableName = someValue
 echo ${#variableName} = This will print the lenght of the variable
@@ -135,8 +135,29 @@ READ COMMANDS: Let the console read some input value from the user
 	-read -p: It will let us to show a message/note to the user before the input value
 	-read -t amountSeconds: Will move to the next line after that time
 	-read -s: Will hide the values, like a password field
-	NOTE: I can use the 3 options at the same time, e.g. read -s -t 5 -p rest of the line
+	NOTE: I can use the 3 options at the same time, i.e. read -s -t 5 -p rest of the line
 
 SELECT COMMAND: Saves the value of selectable option to a variable based on the users's selectoon
 	-PS3 variable: Customise the select prompt and give information to the user about the options that is going to show
 	NOTE: Create a BREAK command line before done line, it's a good practice
+
+--------------------------------------------------------------------------------
+----------------------------------Logic
+CHAINING COMMANDS WITH LIST OPERATORS
+	-List: When you put one or more commands on a given line
+	-List operators: Types of control operators that enable us to create list of commands that operate in different ways
+		-&, Allow us to run commands asynchronously, runs all the commands in the list regardless of whether the previous command ran successfully or not
+		-;, Runs commands sequentially, it means, runs the commands one after the other
+		-&&, Runs the next command only if the command before it runs successfully
+		-||, Runs the second command runs only if the previous command fails
+
+TEST COMMANDS + CONDITIONAL OPERATORS
+	-Test command: A command that can be used in bash to compare different pieces of information, to run a test, it is neccessary to close the commands with []
+		i.e. *[ 2 -eq 2 ] ; echo $? = This means, if the values are equal, then, print the result
+			 *[[ "hello" = "goodbye" ]] ; $? = For this case, we are using "=" because we comparing strings
+			 *[] = To test operators
+			 *[[]] = To test commands
+		NOTE: 0 = TRUE, 1 = FALSE, we that to put an space between the squeare brakets and the test command
+	-Conditional Operators
+		-eq = equal, -nq = not equal, -gt = grater than, -lt = less than, -gep = grater than equal, -leq = less than equal, -z = checks if a string is empty or null
+		,e = if a file exists, -f = checks if it's a regular file, -d = if something is a directory, -x = if a scritp exists and has execution permissions
