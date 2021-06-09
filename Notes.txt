@@ -27,7 +27,7 @@ Ls -l = See the permissions, if it starts with - it is a file, but d it is a fol
 
 -it = Correr el bash pero espere a que yo le de entrada, porque es interactivo
 
-Mv scriptName folderToMove = to move 1 file a folder
+Mv scriptName folderToMove = to move 1 file a folder or could be used like a rename option
 
 Ls -a = to show hidden files
 
@@ -136,3 +136,7 @@ READ COMMANDS: Let the console read some input value from the user
 	-read -t amountSeconds: Will move to the next line after that time
 	-read -s: Will hide the values, like a password field
 	NOTE: I can use the 3 options at the same time, e.g. read -s -t 5 -p rest of the line
+
+SELECT COMMAND: Saves the value of selectable option to a variable based on the users's selectoon
+	-PS3 variable: Customise the select prompt and give information to the user about the options that is going to show
+	NOTE: Create a BREAK command line before done line, it's a good practice
