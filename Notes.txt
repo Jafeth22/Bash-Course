@@ -182,3 +182,12 @@ ARRAYS
 
 READARRAY COMMAND (This command for Bash v3.x.x, doesn't work, the alternative would be use Read Loop (i.e. read_while.sh))
 	-NOTE: It's alternative is 'for and array/file_creator.sh' 
+
+--------------------------------------------------------------------------------
+----------------------------------Debugging
+SHELLCHECK: It's a plugging that gives warnings and suggestions for bash/sh shell scripts: 
+	(https://github.com/koalaman/shellcheck || https://www.shellcheck.net/)
+	for scripts: shellcheck scriptName
+
+In case I do not have enough privileges, you could try to use:
+	sudo scriptName.sh, this will enable all the privileges

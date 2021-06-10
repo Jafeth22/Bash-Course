@@ -1,0 +1,4 @@
+Cual es la diferencia entre [] y [[]]
+
+Cual es la diferencia entre = y ==, en un if
+
