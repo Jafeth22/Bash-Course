@@ -37,7 +37,9 @@ touch fileName = This will create an empty file
 
 cat fileName = Show what contains the file
 
-$0 = This will print the name of the current shell  
+$0 = This will print the name of the current shell
+
+bash --version = To know the bash version
 
 PATH variable = Tell the shell where to search for executable files, it constain the list of folders that the shell will search for executeble files to run as command names
 	*echo $PATH
@@ -100,7 +102,7 @@ Steps before execute a command line
 			1-Brace
 			2-Parameter, Arithmetic, Command Substitution and Tilde
 			3-Word splitting: This work only with Parameter, Command and Arithmetic
-				IFS: To split the unquoted values, the default values are space, tab and newline, but IT can be changed
+				*IFS: To split the unquoted values, the default values are space, tab and newline, but IT can be changed
 				NOTE: If I want the output of Parameter, Arithmetic and a Command Substitution, to be considered as a single word: WRAP THAT EXPANSION IN DOUBLE QUOTES
 			4-Globbing: Only words containing unquoted special pattern characters are interpreted as patterns
 				-*: files.* = all named file or *.txt = all text files or files*.txt = that has some value after "file" and it is a text file
@@ -165,3 +167,18 @@ TEST COMMANDS + CONDITIONAL OPERATORS
 --------------------------------------------------------------------------------
 ----------------------------------Processing Options & Reading Files
 GETOPTS: Enable Bash to get the options provided to the script. This commands doesn't get all the options at once, each time you run the script, it will read only 1 line, i.e. 1 time that it's run, it'll get the first opt, 2 time -> 2 option..., for this reason, it's a good idea to add a while before the command
+
+--------------------------------------------------------------------------------
+----------------------------------Arrays + For loops
+ARRAYS
+	-Create an array = variableName=$(values separete by spaces)
+	-Read an array = ${variableName[index]}
+	-Show all = ${variableName[@]}
+	-Show a section = ${variableName[@]:startsPosition:lastPositionOptional}
+	-Add an element to the end = variableName+=(newValues)
+	-Delete an specific value = unset variableName[index], NOTE: If you delete the element, you also are deleting the index of that element
+	-Show indexs of elements = ${!variableName[@]
+	-Change an element = variableName[index]=newValue
+
+READARRAY COMMAND (This command for Bash v3.x.x, doesn't work, the alternative would be use Read Loop (i.e. read_while.sh))
+	-NOTE: It's alternative is 'for and array/file_creator.sh' 
