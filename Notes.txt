@@ -161,3 +161,7 @@ TEST COMMANDS + CONDITIONAL OPERATORS
 	-Conditional Operators
 		-eq = equal, -nq = not equal, -gt = grater than, -lt = less than, -gep = grater than equal, -leq = less than equal, -z = checks if a string is empty or null
 		,e = if a file exists, -f = checks if it's a regular file, -d = if something is a directory, -x = if a scritp exists and has execution permissions
+
+--------------------------------------------------------------------------------
+----------------------------------Processing Options & Reading Files
+GETOPTS: Enable Bash to get the options provided to the script. This commands doesn't get all the options at once, each time you run the script, it will read only 1 line, i.e. 1 time that it's run, it'll get the first opt, 2 time -> 2 option..., for this reason, it's a good idea to add a while before the command
