@@ -191,3 +191,10 @@ SHELLCHECK: It's a plugging that gives warnings and suggestions for bash/sh shel
 
 In case I do not have enough privileges, you could try to use:
 	sudo scriptName.sh, this will enable all the privileges
+
+HOW TO FIND HELP
+	-type command: Let me know if a command is internal or external, in case to be internal, it should show "buildin"
+		-i.e. type -a cd: Here checks if cd is an internal or external command
+		-help internalCommand: To check the information of the internal command
+		-man externalCommand: To check the information of the external command, like a short for manual
+		The -k option stands for “keyword” and enables you to search the man pages that match your chosen keyword.
