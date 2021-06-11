@@ -198,3 +198,19 @@ HOW TO FIND HELP
 		-help internalCommand: To check the information of the internal command
 		-man externalCommand: To check the information of the external command, like a short for manual
 		The -k option stands for “keyword” and enables you to search the man pages that match your chosen keyword.
+
+--------------------------------------------------------------------------------
+----------------------------------Scheduling and automation
+AT COMMAND: To Schedule task, this is a Daemon (runs in the background)
+	1-sudo apt install at: To install at command
+		NOTE: In MAC case, it is prefer to run sudo launchctl load -w, this command already exists, just to enable,
+			see the next url to more details: https://developercoach.com/using-at-for-command-scheduling-under-mac-os-x/
+	2-daemon service
+	3-atd: check the list of schedule scripts
+	4-service atd status: checks the daemon's status
+	5-service atd start/stop/restart: if it is neccessary
+	6-at time(it could be with am/pm, then press ctrl+D to end command line)
+	7-sudo launchctl unload -w: Enable the service
+	-at -l: List all the jobs that we've schedule
+	-atrm idDaemon: To remove a job from queue
+	-at [hour:minutesAm/pm] [day (optional) | date (mm/dd/yyyy)] [tomorrow | next week] [now + number of second/minutes/hours/days] -f scriptName.sh: To execute a specific script
