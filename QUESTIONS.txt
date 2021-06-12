@@ -1,4 +1,8 @@
-Cual es la diferencia entre [] y [[]]
+Cual es la diferencia entre [] y [[  ]]
+[] = 
+[[]] = Es el más recomendable, es más bueno, 
 
-Cual es la diferencia entre = y ==, en un if
+Cual es la diferencia entre = y == -eq, en un if
 
+
+Como crear una tarea programada con at?

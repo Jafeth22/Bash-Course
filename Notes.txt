@@ -41,6 +41,10 @@ $0 = This will print the name of the current shell
 
 bash --version = To know the bash version
 
+chsh -s $(which bash/zsh) = Switch to bash/zsh
+
+Cntrl + R = Let me search in all the commands related what I am typing, if I keep pressing 
+
 PATH variable = Tell the shell where to search for executable files, it constain the list of folders that the shell will search for executeble files to run as command names
 	*echo $PATH
 Inside .profile or .bash_profile we can add the following line to make it global
@@ -158,10 +162,10 @@ TEST COMMANDS + CONDITIONAL OPERATORS
 		i.e. *[ 2 -eq 2 ] ; echo $? = This means, if the values are equal, then, print the result
 			 *[[ "hello" = "goodbye" ]] ; $? = For this case, we are using "=" because we comparing strings
 			 *[] = To test operators
-			 *[[]] = To test commands
+			 *[[]] = To test commands, this is preferable
 		NOTE: 0 = TRUE, 1 = FALSE, we that to put an space between the squeare brakets and the test command
 	-Conditional Operators
-		-eq = equal, -nq = not equal, -gt = grater than, -lt = less than, -gep = grater than equal, -leq = less than equal, -z = checks if a string is empty or null
+		-eq = equal (compare number), ==/= (compare string, it's preferable use "=") , -nq = not equal, -gt = grater than, -lt = less than, -gep = grater than equal, -leq = less than equal, -z = checks if a string is empty or null
 		,e = if a file exists, -f = checks if it's a regular file, -d = if something is a directory, -x = if a scritp exists and has execution permissions
 
 --------------------------------------------------------------------------------
@@ -203,7 +207,7 @@ HOW TO FIND HELP
 ----------------------------------Scheduling and automation
 AT COMMAND: To Schedule task, this is a Daemon (runs in the background)
 	1-sudo apt install at: To install at command
-		NOTE: In MAC case, it is prefer to run sudo launchctl load -w, this command already exists, just to enable,
+		NOTE: In MAC case, it is prefer to run: sudo launchctl load -w, this command already exists, just to enable,
 			see the next url to more details: https://developercoach.com/using-at-for-command-scheduling-under-mac-os-x/
 	2-daemon service
 	3-atd: check the list of schedule scripts
@@ -212,5 +216,26 @@ AT COMMAND: To Schedule task, this is a Daemon (runs in the background)
 	6-at time(it could be with am/pm, then press ctrl+D to end command line)
 	7-sudo launchctl unload -w: Enable the service
 	-at -l: List all the jobs that we've schedule
-	-atrm idDaemon: To remove a job from queue
-	-at [hour:minutesAm/pm] [day (optional) | date (mm/dd/yyyy)] [tomorrow | next week] [now + number of second/minutes/hours/days] -f scriptName.sh: To execute a specific script
+	-atrm idDaemon or at -r id: To remove a job from queue
+	-at [hour:minutesAm/pm] [day (optional) | date (mm/dd/yyyy)] [tomorrow | next week] -f scriptName.sh [now + number of second/minutes/hours/days]: To execute a specific script
+
+CRON COMMAND: The different againt AT, these is running daemon serv continually in the background, The system has to be on at the time of the scheduled cron job otherwise the cron job will not be run
+	*The following steps are for instal CRON Service in a Linux enviroment:
+		-sudo apt-get update
+		-sudo apt-get install cron
+		-service cron status: If the status is not running, change it
+		-sudo servie start: To start the service
+	-crontap: Text file that contains a table of which commands the user wants Chron to run and at what times they want to run them
+	-To set CRON Service
+	# minute, hour, day of the month, month, day of the week
+	# m h  dom mon dow   command
+	# * = represent all the options for a particular column (m, h, dom, mon, dow
+	#                                                        command)
+	# h = 24 (0-23) hours mode
+	# mon = 1-12 or JAN, FEB -> DEC
+	# dow = 0:Monday - 6:Sunday or MON-SUN
+	# We could use the , to use differente values of dates or the - to represent
+	# range
+
+	#* * * * * ~/Documents/Career\ Path\ Courses/Bash\ Course/Scheduling\ and\ automation/cron_cript.sh
+
