@@ -205,7 +205,7 @@ HOW TO FIND HELP
 
 --------------------------------------------------------------------------------
 ----------------------------------Scheduling and automation
-AT COMMAND: To Schedule task, this is a Daemon (runs in the background)
+AT COMMAND: To Schedule task, this is a Daemon (runs in the background), only once
 	1-sudo apt install at: To install at command
 		NOTE: In MAC case, it is prefer to run: sudo launchctl load -w, this command already exists, just to enable,
 			see the next url to more details: https://developercoach.com/using-at-for-command-scheduling-under-mac-os-x/
@@ -243,5 +243,7 @@ CRONTAB DIRECTORIES: They are folders on your system where you can place scripts
 	The folder are hourly, daily, weekly and monthly
 	-When add a new file to the directories, it is neccessary to restart the CRON SERVICE
 
-ANACRON
-	
+ANACRON: Can recover missed jobs
+	It only runs daily, weekly or monthly
+	-period delay job-identifier command: To execute an anacron
+	-/var/spool/anacron. Within this folder anacron creates files with time stamps to check when the jobs were run.
