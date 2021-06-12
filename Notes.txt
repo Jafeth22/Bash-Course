@@ -234,8 +234,14 @@ CRON COMMAND: The different againt AT, these is running daemon serv continually 
 	# h = 24 (0-23) hours mode
 	# mon = 1-12 or JAN, FEB -> DEC
 	# dow = 0:Monday - 6:Sunday or MON-SUN
-	# We could use the , to use differente values of dates or the - to represent
-	# range
+	# We could use the , to use differente values of dates or the - to represent range
+	NOTE: You can see this page to set or check you datetime: https://crontab.guru/
 
 	#* * * * * ~/Documents/Career\ Path\ Courses/Bash\ Course/Scheduling\ and\ automation/cron_cript.sh
 
+CRONTAB DIRECTORIES: They are folders on your system where you can place scripts to run at a particular frequency
+	The folder are hourly, daily, weekly and monthly
+	-When add a new file to the directories, it is neccessary to restart the CRON SERVICE
+
+ANACRON
+	
