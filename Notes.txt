@@ -37,7 +37,7 @@ touch fileName = This will create an empty file
 
 cat fileName = Show what contains the file
 
-$0 = This will print the name of the current shell
+$0 or SHELL = This will print the name of the current shell
 
 bash --version = To know the bash version
 
@@ -247,3 +247,12 @@ ANACRON: Can recover missed jobs
 	It only runs daily, weekly or monthly
 	-period delay job-identifier command: To execute an anacron
 	-/var/spool/anacron. Within this folder anacron creates files with time stamps to check when the jobs were run.
+
+--------------------------------------------------------------------------------
+----------------------------------Working with Remote Servers
+HOW TO EXECUTE SCRIPTS ON A REMOTE SERVER (SSH)
+	SSH: Secure Shell, let the client open a shell on another machine, over an encrypted network connection
+	-Search a file ending with .pub, in the HOME or in the root path 
+	-ssh-keygen: To create a SSH key, this will generate 2 keys, if we want to give some of 2 keys, we have to give the one that ending with .pub, also, we could copy the key using nano
+	-ssh remoteUser@ipAddress: To connect to a remote system 
+	-cat /etc/os-relese (In the remote serv): We will see the version and some other details about remote serv
