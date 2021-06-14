@@ -256,3 +256,11 @@ HOW TO EXECUTE SCRIPTS ON A REMOTE SERVER (SSH)
 	-ssh-keygen: To create a SSH key, this will generate 2 keys, if we want to give some of 2 keys, we have to give the one that ending with .pub, also, we could copy the key using nano
 	-ssh remoteUser@ipAddress: To connect to a remote system 
 	-cat /etc/os-relese (In the remote serv): We will see the version and some other details about remote serv
+	-exit: logout from the server
+
+HOW TO SEND AND RECEIVE FILES FROM A REMOTE SERVER (SCP command)
+	-scp (Secure Copy Command): It's a command that uses SSH to securerly copy files from one location to another over encrypted -From Local to Server
+		scp fileToCopy whereToPaste: i.e.: scp pathToCopyFile remoteUser@ipAddress:pathToPasteFile
+	-From Server to Local
+		scp fileToCopy whereToPaste: i.e.: scp remoteUser@ipAddress:pathToPasteFile pathToCopyFile
+	
