@@ -45,6 +45,8 @@ chsh -s $(which bash/zsh) = Switch to bash/zsh
 
 Cntrl + R = Let me search in all the commands related what I am typing, if I keep pressing 
 
+$? = Holds the status of the most recent command
+
 PATH variable = Tell the shell where to search for executable files, it constain the list of folders that the shell will search for executeble files to run as command names
 	*echo $PATH
 Inside .profile or .bash_profile we can add the following line to make it global
@@ -252,7 +254,7 @@ ANACRON: Can recover missed jobs
 ----------------------------------Working with Remote Servers
 HOW TO EXECUTE SCRIPTS ON A REMOTE SERVER (SSH)
 	SSH: Secure Shell, let the client open a shell on another machine, over an encrypted network connection
-	-Search a file ending with .pub, in the HOME or in the root path 
+	-Searc h a file ending with .pub, in the HOME or in the root path 
 	-ssh-keygen: To create a SSH key, this will generate 2 keys, if we want to give some of 2 keys, we have to give the one that ending with .pub, also, we could copy the key using nano
 	-ssh remoteUser@ipAddress: To connect to a remote system 
 	-cat /etc/os-relese (In the remote serv): We will see the version and some other details about remote serv
