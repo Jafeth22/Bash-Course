@@ -59,11 +59,11 @@ Source pathFile = To reload the file without restart the terminal
 
 npm uninstall <name> = moves the module from node_modules but does not update package.json
 
-npm uninstall <name> = ve also removes it from dependenciesin package.json
+npm uninstall <name> --save = Also removes it from dependenciesin package.json
 
-npm uninstall <name> = save-dev also removes it from devDependencies in package.json
+npm uninstall <name> --save-dev = Also removes it from devDependencies in package.json
 
-npm uninstall -g <name> = save also removes it globally
+npm uninstall -g <name> --save = Also removes it globally
 
 --------------------------------------------------------------------------------
 ----------------------------------Variables and Shell Expansions
